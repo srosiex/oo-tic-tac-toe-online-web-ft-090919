@@ -103,9 +103,9 @@ WIN_COMBINATIONS = [[0,1,2],
       elsif draw?
         puts "Cat's Game!"
       end
-  
-    end
-     
 
-   
+    end
+
+
+
 end
