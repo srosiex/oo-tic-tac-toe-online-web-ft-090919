@@ -9,7 +9,7 @@ WIN_COMBINATIONS = [[0,1,2],
 [6,4,2]]
 
   def initialize()
-    @board = Array.new(9, " ")
+    @board = board || Array.new(9, " ")
   end
 
   def display_board
@@ -48,5 +48,9 @@ WIN_COMBINATIONS = [[0,1,2],
 
   def current_player
       turn_count % 2 == 0 ? "X" : "O"
+    end
+
+    def turn_count
+
     end
 end
