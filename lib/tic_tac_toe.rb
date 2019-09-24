@@ -51,13 +51,23 @@ WIN_COMBINATIONS = [[0,1,2],
     end
 
     def turn_count
-        puts "Please enter 1-9:"
-        input = gets.strip - 1
-    if valid_move?(input)
-    move(input, current_player
-    else
+   counter = 0
+   @board.each do |i|
+     if i == "X" || i == "O"
+       counter += 1
+     end
+   end
+   counter
+ end
+
+    def turn
+  puts "Please enter 1-9:"
+  input = gets.strip
+  if valid_move?(input)
+    move(input, current_player)
+  else
     turn
-    end
-    display_board
-    end
+  end
+  display_board
+end
 end
