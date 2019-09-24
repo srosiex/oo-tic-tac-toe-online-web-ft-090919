@@ -71,4 +71,41 @@ WIN_COMBINATIONS = [[0,1,2],
        turn
      end
    end
+    def won?
+   odp = WIN_COMBINATIONS.detect do |comb|
+        @board[comb[0]]=="X" && @board[comb[1]]=="X" && @board[comb[2]]=="X" || @board[comb[0]]=="O" && @board[comb[1]]=="O" && @board[comb[2]]=="O"
+          end
+    odp ? odp : false
+    end
+    def full?
+      @board.all?{|slot| slot == "X" || slot == "O"}? true : false
+    end
+    def draw?
+      won? ? false : full? ? true : false
+    end
+    def over?
+      won? || draw? || full?
+    end
+    def winner
+      win = won?
+      if(!win)
+        nil
+      else
+        @board[win[0]]
+      end
+    end
+    def play
+      until over?
+        turn
+      end
+      if won?
+        puts "Congratulations #{winner}!"
+      elsif draw?
+        puts "Cat's Game!"
+      end
+  
+    end
+     
+
+   
 end
