@@ -53,7 +53,7 @@ WIN_COMBINATIONS = [[0,1,2],
     def turn_count
         puts "Please enter 1-9:"
         input = gets.strip - 1
-    if valid_move?(input) 
+    if valid_move?(input)
     move(input, current_player
     else
     turn
